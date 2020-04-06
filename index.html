@@ -1,0 +1,43 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        input {
+            margin-bottom: 15px;
+        }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label>Radius:</label><br>
+                <input id="radius" type="number" min="0" onchange="math()">
+            </div>
+            <div>
+                <label>Height:</label><br>
+                <input id="height" type="number" min="0" onchange="math()">
+            </div>
+            <div>
+                <label>Volume of a Cylinder:</label><br>
+                <input id="out" type="number" disabled>
+            </div>
+        </form>
+
+        <script>
+        function math() {
+            var radius = document.getElementById("radius").value;
+            if(radius <= 0) {
+                alert("Radius must be bigger than 0.")
+            }
+
+            var height = document.getElementById("height").value;
+            if(height <= 0) {
+                alert("Height must be bigger than 0.")
+            }
+            var out = document.getElementById("out");
+            out.value = Math.PI * radius * radius * height;
+        }
+        </script>
+    </body>
+</html>
